@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プライバシーポリシー | JBoundex</title>
+    <link rel="alternate" hreflang="en" href="https://jboundex.com/privacy.html" />
+    <link rel="alternate" hreflang="ja" href="https://jboundex.com/ja/privacy.html" />
+    <link rel="alternate" hreflang="x-default" href="https://jboundex.com/privacy.html" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-red: #bc002d;
+            --primary-red-dark: #8a0021;
+            --primary-red-light: #d4163f;
+            --bg-light: #faf8f8;
+            --bg-white: #ffffff;
+            --text-dark: #1e293b;
+            --text-gray: #64748b;
+            --text-light: #94a3b8;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.8;
+            background-color: var(--bg-white);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            background: var(--bg-white);
+            border-bottom: 1px solid var(--border-color);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--text-gray);
+            font-weight: 400;
+            font-size: 0.875rem;
+            display: block;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-gray);
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary-red);
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 8px;
+            font-size: 0.875rem;
+        }
+
+        .lang-switch a {
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .lang-switch a.active {
+            background: var(--primary-red);
+            color: white;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: var(--bg-light);
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .page-header p {
+            color: var(--text-gray);
+            font-size: 0.9375rem;
+        }
+
+        /* Content */
+        .legal-content {
+            padding: 60px 0;
+        }
+
+        .legal-content section {
+            margin-bottom: 48px;
+        }
+
+        .legal-content h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--primary-red);
+        }
+
+        .legal-content h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 24px 0 12px;
+        }
+
+        .legal-content p {
+            margin-bottom: 16px;
+            color: var(--text-gray);
+            font-size: 0.9375rem;
+        }
+
+        .legal-content ul,
+        .legal-content ol {
+            margin: 16px 0;
+            padding-left: 24px;
+            color: var(--text-gray);
+            font-size: 0.9375rem;
+        }
+
+        .legal-content li {
+            margin-bottom: 8px;
+        }
+
+        .legal-content .note {
+            background: var(--bg-light);
+            padding: 16px 20px;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            color: var(--text-gray);
+            margin: 16px 0;
+        }
+
+        /* Table */
+        .legal-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 0.9375rem;
+        }
+
+        .legal-content th,
+        .legal-content td {
+            border: 1px solid var(--border-color);
+            padding: 12px 16px;
+            text-align: left;
+        }
+
+        .legal-content th {
+            background: var(--bg-light);
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .legal-content td {
+            color: var(--text-gray);
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: var(--bg-light);
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 48px;
+        }
+
+        .toc h2 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc li {
+            margin-bottom: 8px;
+        }
+
+        .toc a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 0.9375rem;
+            transition: color 0.2s;
+        }
+
+        .toc a:hover {
+            color: var(--primary-red);
+        }
+
+        /* Contact Box */
+        .contact-box {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+
+        .contact-box h3 {
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+
+        .contact-box p {
+            margin-bottom: 8px;
+        }
+
+        .contact-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 40px 0;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-inner p {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .page-header {
+                padding: 100px 0 40px;
+            }
+
+            .page-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .legal-content table {
+                font-size: 0.8125rem;
+            }
+
+            .legal-content th,
+            .legal-content td {
+                padding: 8px 12px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+    <div class="header-inner">
+        <a href="index.html" class="logo">
+            JBoundex
+            <span>日本市場参入支援</span>
+        </a>
+        <nav>
+            <a href="index.html#services">サービス</a>
+            <a href="index.html#process">プロセス</a>
+            <a href="index.html#faq">よくある質問</a>
+            <a href="index.html#about">会社概要</a>
+            <a href="index.html#contact">お問い合わせ</a>
+            <div class="lang-switch">
+                <a href="../privacy.html">EN</a>
+                <a href="privacy.html" class="active">JP</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1>プライバシーポリシー</h1>
+            <p>最終更新日: 2024年1月1日</p>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="legal-content">
+        <div class="container">
+            
+            <!-- Table of Contents -->
+            <div class="toc">
+                <h2>目次</h2>
+                <ul>
+                    <li><a href="#section1">1. はじめに</a></li>
+                    <li><a href="#section2">2. 収集する情報</a></li>
+                    <li><a href="#section3">3. 情報の利用目的</a></li>
+                    <li><a href="#section4">4. 情報の第三者提供</a></li>
+                    <li><a href="#section5">5. 情報の安全管理</a></li>
+                    <li><a href="#section6">6. Cookieおよびトラッキング技術</a></li>
+                    <li><a href="#section7">7. お客様の権利</a></li>
+                    <li><a href="#section8">8. 情報の保存期間</a></li>
+                    <li><a href="#section9">9. 海外への情報移転</a></li>
+                    <li><a href="#section10">10. 未成年者のプライバシー</a></li>
+                    <li><a href="#section11">11. プライバシーポリシーの変更</a></li>
+                    <li><a href="#section12">12. お問い合わせ</a></li>
+                </ul>
+            </div>
+
+            <!-- Section 1 -->
+            <section id="section1">
+                <h2>1. はじめに</h2>
+                <p>JBoundex（以下「当社」といいます）は、お客様のプライバシーを尊重し、個人情報の保護に努めています。本プライバシーポリシーは、当社が提供する日本市場参入支援サービス（以下「本サービス」といいます）において、お客様の情報をどのように収集、利用、保護するかを説明するものです。</p>
+                <p>本サービスをご利用いただくことにより、お客様は本プライバシーポリシーに同意したものとみなされます。</p>
+            </section>
+
+            <!-- Section 2 -->
+            <section id="section2">
+                <h2>2. 収集する情報</h2>
+                <p>当社は、本サービスの提供にあたり、以下の情報を収集することがあります。</p>
+                
+                <h3>2.1 お客様から直接提供される情報</h3>
+                <table>
+                    <tr>
+                        <th>情報の種類</th>
+                        <th>具体例</th>
+                    </tr>
+                    <tr>
+                        <td>会社情報</td>
+                        <td>会社名、所在地、業種、設立年、従業員数</td>
+                    </tr>
+                    <tr>
+                        <td>連絡先情報</td>
+                        <td>担当者名、メールアドレス、電話番号</td>
+                    </tr>
+                    <tr>
+                        <td>事業情報</td>
+                        <td>商品カテゴリ、売上規模、主要市場、事業計画</td>
+                    </tr>
+                    <tr>
+                        <td>商品情報</td>
+                        <td>商品名、商品説明、画像、価格、在庫情報</td>
+                    </tr>
+                    <tr>
+                        <td>決済情報</td>
+                        <td>請求先住所、銀行口座情報</td>
+                    </tr>
+                </table>
+
+                <h3>2.2 自動的に収集される情報</h3>
+                <ul>
+                    <li>IPアドレス</li>
+                    <li>ブラウザの種類とバージョン</li>
+                    <li>オペレーティングシステム</li>
+                    <li>アクセス日時</li>
+                    <li>参照元URL</li>
+                    <li>閲覧したページ</li>
+                </ul>
+
+                <h3>2.3 第三者から取得する情報</h3>
+                <p>当社は、以下の第三者から情報を取得することがあります。</p>
+                <ul>
+                    <li>ECプラットフォーム（Amazon Japan、楽天市場等）からの販売データ、顧客レビュー</li>
+                    <li>広告プラットフォームからのキャンペーンパフォーマンスデータ</li>
+                    <li>物流パートナーからの配送情報</li>
+                </ul>
+            </section>
+
+            <!-- Section 3 -->
+            <section id="section3">
+                <h2>3. 情報の利用目的</h2>
+                <p>当社は、収集した情報を以下の目的で利用します。</p>
+                <ol>
+                    <li><strong>サービスの提供</strong>
+                        <ul>
+                            <li>日本市場参入に関するコンサルティングの実施</li>
+                            <li>ECプラットフォームへの出品・運用代行</li>
+                            <li>コンプライアンス支援</li>
+                            <li>レポートの作成・提供</li>
+                        </ul>
+                    </li>
+                    <li><strong>コミュニケーション</strong>
+                        <ul>
+                            <li>お問い合わせへの対応</li>
+                            <li>サービスに関する重要なお知らせの送付</li>
+                            <li>ニュースレターやマーケティング情報の配信（同意がある場合）</li>
+                        </ul>
+                    </li>
+                    <li><strong>サービスの改善</strong>
+                        <ul>
+                            <li>サービス品質の分析・向上</li>
+                            <li>新サービスの開発</li>
+                            <li>ウェブサイトの使いやすさの改善</li>
+                        </ul>
+                    </li>
+                    <li><strong>法的義務の遵守</strong>
+                        <ul>
+                            <li>法令に基づく対応</li>
+                            <li>契約の履行</li>
+                            <li>権利の保護</li>
+                        </ul>
+                    </li>
+                </ol>
+            </section>
+
+            <!-- Section 4 -->
+            <section id="section4">
+                <h2>4. 情報の第三者提供</h2>
+                <p>当社は、以下の場合を除き、お客様の個人情報を第三者に提供することはありません。</p>
+                
+                <h3>4.1 お客様の同意がある場合</h3>
+                <p>お客様から事前に同意を得た場合、第三者に情報を提供することがあります。</p>
+
+                <h3>4.2 サービス提供に必要な場合</h3>
+                <p>本サービスの提供にあたり、以下の第三者と情報を共有することがあります。</p>
+                <ul>
+                    <li>ECプラットフォーム運営会社（Amazon Japan、楽天等）</li>
+                    <li>物流・倉庫パートナー</li>
+                    <li>決済処理サービス</li>
+                    <li>翻訳・ローカライゼーションサービス</li>
+                    <li>法務・会計の専門家</li>
+                </ul>
+                <div class="note">
+                    これらの第三者は、当社との契約に基づき、お客様の情報を適切に取り扱う義務を負っています。
+                </div>
+
+                <h3>4.3 法令に基づく場合</h3>
+                <p>法令に基づく開示請求があった場合、または当社の権利、財産、安全を保護するために必要な場合、情報を開示することがあります。</p>
+
+                <h3>4.4 事業譲渡の場合</h3>
+                <p>合併、買収、事業譲渡等が行われる場合、お客様の情報が譲渡先に引き継がれることがあります。この場合、事前にお客様に通知します。</p>
+            </section>
+
+            <!-- Section 5 -->
+            <section id="section5">
+                <h2>5. 情報の安全管理</h2>
+                <p>当社は、お客様の情報を保護するため、以下のセキュリティ対策を講じています。</p>
+                <ul>
+                    <li><strong>技術的対策</strong>
+                        <ul>
+                            <li>SSL/TLS暗号化通信の使用</li>
+                            <li>ファイアウォールによる不正アクセスの防止</li>
+                            <li>定期的なセキュリティアップデート</li>
+                            <li>アクセスログの監視</li>
+                        </ul>
+                    </li>
+                    <li><strong>組織的対策</strong>
+                        <ul>
+                            <li>情報へのアクセス権限の制限</li>
+                            <li>従業員への情報セキュリティ教育</li>
+                            <li>秘密保持契約の締結</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>ただし、インターネット上の通信において完全なセキュリティを保証することはできません。お客様ご自身でもパスワードの管理等にご注意ください。</p>
+            </section>
+
+            <!-- Section 6 -->
+            <section id="section6">
+                <h2>6. Cookieおよびトラッキング技術</h2>
+                
+                <h3>6.1 Cookieとは</h3>
+                <p>Cookieとは、ウェブサイトがお客様のブラウザに保存する小さなテキストファイルです。当社ウェブサイトでは、以下の目的でCookieを使用しています。</p>
+                
+                <h3>6.2 使用するCookieの種類</h3>
+                <table>
+                    <tr>
+                        <th>種類</th>
+                        <th>目的</th>
+                    </tr>
+                    <tr>
+                        <td>必須Cookie</td>
+                        <td>ウェブサイトの基本機能の提供に必要</td>
+                    </tr>
+                    <tr>
+                        <td>分析Cookie</td>
+                        <td>ウェブサイトの利用状況の分析（Google Analytics等）</td>
+                    </tr>
+                    <tr>
+                        <td>機能Cookie</td>
+                        <td>言語設定等のユーザー設定の保存</td>
+                    </tr>
+                </table>
+
+                <h3>6.3 Cookieの管理</h3>
+                <p>お客様は、ブラウザの設定によりCookieを無効にすることができます。ただし、Cookieを無効にした場合、ウェブサイトの一部機能が正常に動作しない可能性があります。</p>
+            </section>
+
+            <!-- Section 7 -->
+            <section id="section7">
+                <h2>7. お客様の権利</h2>
+                <p>お客様は、ご自身の個人情報について、以下の権利を有しています。</p>
+                <ul>
+                    <li><strong>開示請求</strong>：当社が保有するお客様の個人情報の開示を請求できます</li>
+                    <li><strong>訂正請求</strong>：個人情報に誤りがある場合、訂正を請求できます</li>
+                    <li><strong>削除請求</strong>：一定の条件の下、個人情報の削除を請求できます</li>
+                    <li><strong>利用停止請求</strong>：個人情報の利用停止を請求できます</li>
+                    <li><strong>第三者提供の停止請求</strong>：第三者への提供の停止を請求できます</li>
+                </ul>
+                <p>これらの権利を行使される場合は、本ポリシー末尾のお問い合わせ先までご連絡ください。ご本人確認のため、身分証明書の提示をお願いする場合があります。</p>
+                <div class="note">
+                    ※ 法令上の保存義務がある情報等、削除・利用停止に応じられない場合があります。
+                </div>
+            </section>
+
+            <!-- Section 8 -->
+            <section id="section8">
+                <h2>8. 情報の保存期間</h2>
+                <p>当社は、収集した情報を以下の期間保存します。</p>
+                <table>
+                    <tr>
+                        <th>情報の種類</th>
+                        <th>保存期間</th>
+                    </tr>
+                    <tr>
+                        <td>契約関連情報</td>
+                        <td>契約終了後10年間</td>
+                    </tr>
+                    <tr>
+                        <td>取引記録</td>
+                        <td>取引終了後7年間（法令に基づく）</td>
+                    </tr>
+                    <tr>
+                        <td>お問い合わせ履歴</td>
+                        <td>対応完了後3年間</td>
+                    </tr>
+                    <tr>
+                        <td>アクセスログ</td>
+                        <td>取得後1年間</td>
+                    </tr>
+                </table>
+                <p>保存期間経過後、または保存の必要がなくなった場合、当社は速やかに情報を削除または匿名化します。</p>
+            </section>
+
+            <!-- Section 9 -->
+            <section id="section9">
+                <h2>9. 海外への情報移転</h2>
+                <p>当社は、本サービスの提供にあたり、お客様の情報を日本国外に移転することがあります。この場合、当社は以下の措置を講じます。</p>
+                <ul>
+                    <li>移転先の国・地域の個人情報保護制度を確認</li>
+                    <li>移転先との間で適切な契約を締結</li>
+                    <li>適切なセキュリティ対策の実施を確認</li>
+                </ul>
+            </section>
+
+            <!-- Section 10 -->
+            <section id="section10">
+                <h2>10. 未成年者のプライバシー</h2>
+                <p>本サービスは、法人または個人事業主を対象としており、18歳未満の方を対象としていません。当社は、意図的に18歳未満の方から個人情報を収集することはありません。</p>
+            </section>
+
+            <!-- Section 11 -->
+            <section id="section11">
+                <h2>11. プライバシーポリシーの変更</h2>
+                <p>当社は、法令の変更、サービス内容の変更、その他の理由により、本プライバシーポリシーを変更することがあります。</p>
+                <p>重要な変更を行う場合は、ウェブサイト上での告知、またはメールによる通知等、適切な方法でお客様にお知らせします。変更後のプライバシーポリシーは、ウェブサイトに掲載した時点で効力を生じます。</p>
+            </section>
+
+            <!-- Section 12 -->
+            <section id="section12">
+                <h2>12. お問い合わせ</h2>
+                <p>本プライバシーポリシーに関するご質問、個人情報の開示・訂正・削除等のご請求は、以下の窓口までお問い合わせください。</p>
+                
+                <div class="contact-box">
+                    <h3>個人情報に関するお問い合わせ窓口</h3>
+                    <p><strong>JBoundex</strong></p>
+                    <p>メールアドレス: privacy@jboundex.com</p>
+                    <p>受付時間: 平日 10:00〜18:00（日本時間）</p>
+                </div>
+
+                <p>お問い合わせの際は、以下の情報をお知らせください。</p>
+                <ul>
+                    <li>お名前（会社名）</li>
+                    <li>ご連絡先</li>
+                    <li>お問い合わせ内容</li>
+                </ul>
+            </section>
+
+            <div class="note" style="margin-top: 48px;">
+                <p style="margin-bottom: 8px;"><strong>制定日:</strong> 2024年1月1日</p>
+                <p style="margin-bottom: 0;"><strong>最終更新日:</strong> 2024年1月1日</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+    <div class="footer-inner">
+        <p>&copy; 2024 JBoundex. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="index.html">ホーム</a>
+            <a href="terms.html">利用規約</a>
+            <a href="privacy.html">プライバシーポリシー</a>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header shadow on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

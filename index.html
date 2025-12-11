@@ -1,0 +1,1630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JBoundex - Japan Market Entry Without the Usual Risk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-red: #bc002d;
+            --primary-red-dark: #8a0021;
+            --primary-red-light: #d4163f;
+            --accent-red: #e63950;
+            --bg-light: #faf8f8;
+            --bg-white: #ffffff;
+            --text-dark: #1e293b;
+            --text-gray: #64748b;
+            --text-light: #94a3b8;
+            --border-color: #e2e8f0;
+            --success-green: #22c55e;
+            --warning-orange: #f97316;
+            --error-red: #ef4444;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--bg-white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            background: var(--bg-white);
+            border-bottom: 1px solid var(--border-color);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-red);
+        }
+
+        .logo span {
+            color: var(--text-gray);
+            font-weight: 400;
+            font-size: 0.875rem;
+            display: block;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-gray);
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary-red);
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 8px;
+            font-size: 0.875rem;
+        }
+
+        .lang-switch a {
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .lang-switch a.active {
+            background: var(--primary-red);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-red-dark) 100%);
+            color: white;
+            padding: 140px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            right: -200px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 600px;
+            height: 600px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></svg>');
+            background-size: contain;
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 2.75rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.125rem;
+            opacity: 0.9;
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+
+        .hero-subtitle-jp {
+            font-size: 0.9375rem;
+            opacity: 0.8;
+            margin-bottom: 32px;
+            line-height: 1.8;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 32px;
+            font-size: 0.875rem;
+            opacity: 0.9;
+        }
+
+        .hero-meta-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .hero-meta-item .label {
+            background: rgba(255,255,255,0.2);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary-red);
+        }
+
+        .btn-primary:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: white;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            font-size: 1.0625rem;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .section-header .jp-text {
+            font-size: 0.9375rem;
+            color: var(--text-light);
+            margin-top: 12px;
+        }
+
+        /* Why Japan Section */
+        .why-japan {
+            background: var(--bg-light);
+        }
+
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .challenge-card {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .challenge-card .icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary-red);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .challenge-card .icon svg {
+            width: 24px;
+            height: 24px;
+            color: white;
+        }
+
+        .challenge-card h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text-dark);
+        }
+
+        .challenge-card ul {
+            list-style: none;
+            font-size: 0.9375rem;
+            color: var(--text-gray);
+        }
+
+        .challenge-card li {
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .challenge-card li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary-red-light);
+        }
+
+        /* Failure Routes Section */
+        .failure-routes {
+            background: white;
+        }
+
+        .failure-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .failure-card {
+            padding: 32px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .failure-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--warning-orange);
+            border-radius: 12px 12px 0 0;
+        }
+
+        .failure-card .number {
+            width: 32px;
+            height: 32px;
+            background: var(--bg-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-gray);
+            margin-bottom: 16px;
+        }
+
+        .failure-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text-dark);
+        }
+
+        .failure-card ul {
+            list-style: none;
+            font-size: 0.875rem;
+            color: var(--text-gray);
+        }
+
+        .failure-card li {
+            padding: 4px 0;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .failure-card li::before {
+            content: '×';
+            position: absolute;
+            left: 0;
+            color: var(--error-red);
+            font-weight: 600;
+        }
+
+        /* What We Provide Section */
+        .what-we-provide {
+            background: var(--primary-red);
+            color: white;
+        }
+
+        .what-we-provide .section-header h2,
+        .what-we-provide .section-header p {
+            color: white;
+        }
+
+        .what-we-provide .section-header .jp-text {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .provide-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .provide-card {
+            background: rgba(255,255,255,0.1);
+            padding: 32px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .provide-card .icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .provide-card .icon svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .provide-card h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .provide-card p {
+            font-size: 0.9375rem;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--bg-light);
+        }
+
+        .service-item {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 24px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .service-item:nth-child(even) {
+            direction: rtl;
+        }
+
+        .service-item:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .service-content h3 {
+            font-size: 1.375rem;
+            font-weight: 600;
+            color: var(--primary-red);
+            margin-bottom: 16px;
+        }
+
+        .service-content > p {
+            font-size: 1rem;
+            color: var(--text-gray);
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .service-features {
+            list-style: none;
+        }
+
+        .service-features li {
+            padding: 8px 0;
+            padding-left: 28px;
+            position: relative;
+            font-size: 0.9375rem;
+            color: var(--text-dark);
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success-green);
+            font-weight: 600;
+        }
+
+        .service-visual {
+            background: var(--bg-light);
+            border-radius: 8px;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            background: white;
+        }
+
+        .steps-container {
+            position: relative;
+        }
+
+        .steps-line {
+            position: absolute;
+            left: 24px;
+            top: 40px;
+            bottom: 40px;
+            width: 2px;
+            background: var(--border-color);
+        }
+
+        .step-item {
+            display: flex;
+            gap: 32px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-red);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 1.125rem;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-number.step-0 {
+            background: var(--text-gray);
+        }
+
+        .step-content {
+            flex: 1;
+            padding-top: 8px;
+        }
+
+        .step-content h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        .step-content ul {
+            list-style: none;
+            font-size: 0.9375rem;
+            color: var(--text-gray);
+        }
+
+        .step-content li {
+            padding: 4px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .step-content li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary-red-light);
+        }
+
+        /* Benefits Section */
+        .benefits {
+            background: var(--bg-light);
+        }
+
+        .benefits-list {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .benefit-item:last-child {
+            border-bottom: none;
+        }
+
+        .benefit-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--success-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .benefit-icon svg {
+            width: 14px;
+            height: 14px;
+            color: white;
+        }
+
+        .benefit-item p {
+            font-size: 1rem;
+            color: var(--text-dark);
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: white;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .faq-item {
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .faq-question {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .faq-q {
+            background: var(--primary-red);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.875rem;
+            flex-shrink: 0;
+        }
+
+        .faq-question h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            padding-top: 2px;
+        }
+
+        .faq-answer {
+            padding-left: 40px;
+            font-size: 0.9375rem;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--bg-light);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .about-text p {
+            font-size: 1.0625rem;
+            color: var(--text-gray);
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        .about-text .jp-text {
+            font-size: 0.9375rem;
+            color: var(--text-light);
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .about-info {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+        }
+
+        .about-info h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .about-info-item {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .about-info-item:last-child {
+            border-bottom: none;
+        }
+
+        .about-info-item .label {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .about-info-item .value {
+            font-size: 0.9375rem;
+            color: var(--text-dark);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: white;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .contact-info h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .contact-info p {
+            font-size: 1.0625rem;
+            color: var(--text-gray);
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
+        .contact-info .jp-text {
+            font-size: 0.9375rem;
+            color: var(--text-light);
+            margin-top: 20px;
+        }
+
+        .contact-form {
+            background: var(--bg-light);
+            padding: 40px;
+            border-radius: 12px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 0.9375rem;
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-red);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: var(--primary-red);
+            color: white;
+            padding: 16px;
+            font-size: 1rem;
+        }
+
+        .btn-submit:hover {
+            background: var(--primary-red-dark);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand .logo {
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .footer-links h4 {
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: white;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-image {
+                display: none;
+            }
+
+            .challenge-grid,
+            .failure-grid,
+            .provide-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-item {
+                grid-template-columns: 1fr;
+            }
+
+            .service-item:nth-child(even) {
+                direction: ltr;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-content,
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                padding: 120px 0 60px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .section-header h2 {
+                font-size: 1.5rem;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .service-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-inner">
+            <div class="logo">
+                JBoundex
+                <span>Japan Market Entry</span>
+            </div>
+            <nav>
+                <a href="#services">Services</a>
+                <a href="#process">Process</a>
+                <a href="#faq">FAQ</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <div class="lang-switch">
+                    <a href="index.html" class="active">EN</a>
+                    <a href="ja/index.html">JP</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Japan market entry, without the usual risk.</h1>
+                    <p class="hero-subtitle">We provide a fully-managed, low-risk path to test and grow your brand in Japan – including compliance, Amazon Rakuten operations and local logistics.</p>
+                    <p class="hero-subtitle-jp">Test the Japanese market without setting up a local entity or signing heavy exclusive contracts. We handle regulations, Amazon and Rakuten operations, and logistics – all in one integrated package from market testing to full-scale expansion.</p>
+                    <div class="hero-meta">
+                        <div class="hero-meta-item">
+                            <span class="label">Target</span>
+                            <span>Overseas brands and manufacturers planning to enter the Japanese market</span>
+                        </div>
+                        <div class="hero-meta-item">
+                            <span class="label">Channels</span>
+                            <span>Amazon Japan, Rakuten, Shopify and other EC channels</span>
+                        </div>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">Book a free strategy call</a>
+                        <a href="#" class="btn btn-secondary">Download service overview</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <!-- Placeholder for hero image -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Japan Section -->
+    <section class="why-japan" id="why-japan">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Japan is attractive but extremely hard to enter</h2>
+                <p>Japan is one of the most attractive e-commerce markets in the world. High purchasing power, strong online penetration – and very demanding customers. At the same time, regulations, logistics standards and platform rules make Japan one of the hardest markets to enter from overseas.</p>
+                <p class="jp-text">Japan offers high purchasing power and strong e-commerce penetration, but its regulations, logistics standards, and marketplace rules are among the most complex in the world.</p>
+            </div>
+            <div class="challenge-grid">
+                <div class="challenge-card">
+                    <div class="icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h3>Regulation</h3>
+                    <ul>
+                        <li>Pharmaceutical Affairs Act, Act against Unjustifiable Premiums, Electrical Appliance Safety Act, Radio Act, Food Sanitation Act</li>
+                        <li>Advertising expressions are regulated even for cross-border EC</li>
+                        <li>Risk of account suspension or sales ban for violations</li>
+                    </ul>
+                </div>
+                <div class="challenge-card">
+                    <div class="icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3>Customer expectation</h3>
+                    <ul>
+                        <li>Next-day delivery and high packaging quality are standard</li>
+                        <li>Returns happen even when customers simply don't like the product</li>
+                        <li>Detailed customer support in Japanese is essential</li>
+                    </ul>
+                </div>
+                <div class="challenge-card">
+                    <div class="icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                        </svg>
+                    </div>
+                    <h3>Platforms</h3>
+                    <ul>
+                        <li>Amazon Japan has strict screening and unique algorithms</li>
+                        <li>Rakuten requires high operational effort and Japanese-style page design</li>
+                        <li>Customer acquisition costs are extremely high with your own EC site alone</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Failure Routes Section -->
+    <section class="failure-routes">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why typical Japan entry attempts fail</h2>
+                <p>Many foreign brands try Japan via cross-border shipping or by signing an exclusive distributor too early. Both approaches usually lead to poor data, low sales and long-term lock-in.</p>
+            </div>
+            <div class="failure-grid">
+                <div class="failure-card">
+                    <div class="number">1</div>
+                    <h3>Cross-border only: no real market signal</h3>
+                    <ul>
+                        <li>International shipping from overseas inventory</li>
+                        <li>Long delivery times and not Prime eligible</li>
+                        <li>Almost no reviews accumulate</li>
+                        <li>Conditions differ too much from normal Japan standards to serve as a valid demand test</li>
+                    </ul>
+                </div>
+                <div class="failure-card">
+                    <div class="number">2</div>
+                    <h3>Exclusive distributor too early</h3>
+                    <ul>
+                        <li>Signing exclusive contracts without market data</li>
+                        <li>Choosing the wrong partner locks you in for years</li>
+                        <li>Sales and customer insights don't come back to the manufacturer</li>
+                    </ul>
+                </div>
+                <div class="failure-card">
+                    <div class="number">3</div>
+                    <h3>Ignoring Japan-specific rules and operations</h3>
+                    <ul>
+                        <li>Sales suspended for neglecting Pharmaceutical Affairs Act, PSE, or technical regulations</li>
+                        <li>Account troubles from failing to adapt to Amazon Japan and Rakuten operational rules</li>
+                        <li>Withdrawal due to underestimating Japanese CS and returns handling workload</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Provide Section -->
+    <section class="what-we-provide">
+        <div class="container">
+            <div class="section-header">
+                <h2>What we actually provide</h2>
+                <p>We are not just an Amazon agency. We design and operate your entire Japan market entry path – from real-market testing to full-scale expansion, including compliance, EC operations and logistics.</p>
+                <p class="jp-text">We are not just an operations agency. We are your Japan Market Entry partner who designs the entire route from test entry to full-scale expansion – including Japanese regulations, Amazon and Rakuten operations, and logistics – and walks alongside you through execution.</p>
+            </div>
+            <div class="provide-grid">
+                <div class="provide-card">
+                    <div class="icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                    </div>
+                    <h3>Low-risk, data-driven market test</h3>
+                    <p>Without establishing a Japanese entity or signing a general distributor contract, conduct test sales in conditions close to actual Japanese purchasing environments and make entry decisions based on data, not intuition.</p>
+                </div>
+                <div class="provide-card">
+                    <div class="icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3>Compliance and operations handled for you</h3>
+                    <p>We handle regulations like the Pharmaceutical Affairs Act, PSE, and technical standards together with Amazon Japan and Rakuten operations – taking on the most burdensome areas for overseas manufacturers as a complete package.</p>
+                </div>
+                <div class="provide-card">
+                    <div class="icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                        </svg>
+                    </div>
+                    <h3>Clear path from test to full expansion</h3>
+                    <p>We design inventory strategy, channel expansion, and distribution model planning from the start for after you see positive test results – providing a long-term growth route that doesn't end with short-term testing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Services</h2>
+            </div>
+            
+            <div class="service-item">
+                <div class="service-content">
+                    <h3>Japan Market Test Program</h3>
+                    <p>Conduct test sales using Amazon Japan or Rakuten without establishing a Japanese entity or signing heavy exclusive contracts. We partner with FBA and Japanese warehouses to verify with the same delivery speed and CS conditions that Japanese customers normally experience.</p>
+                    <ul class="service-features">
+                        <li>Product listing and page creation for Amazon Japan / Rakuten</li>
+                        <li>Japanese product descriptions, images, and Q&A creation</li>
+                        <li>Advertising operations and keyword optimization</li>
+                        <li>Review acquisition strategies and rating monitoring</li>
+                        <li>KPI visualization over 3-6 month test period</li>
+                    </ul>
+                </div>
+                <div class="service-visual">
+                     <img src="images/tokyo.jpg">
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-content">
+                    <h3>Compliance and Brand Setup</h3>
+                    <p>We establish the legal compliance and brand foundation necessary for selling in Japan.</p>
+                    <ul class="service-features">
+                        <li>Risk checks for Pharmaceutical Affairs Act, Premiums Act, Electrical Appliance Safety Act, Radio Act, etc.</li>
+                        <li>Pre-check and improvement suggestions for product pages and advertising expressions</li>
+                        <li>JAN code acquisition support</li>
+                        <li>Trademark application support in Japan, brand name preliminary research</li>
+                        <li>Amazon Brand Registry registration support</li>
+                        <li>Japan-specific packaging display and logo usage guidelines</li>
+                    </ul>
+                </div>
+                <div class="service-visual">
+                    <img src="images/sinseisho.png">
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-content">
+                    <h3>Scale-up and Distribution Design</h3>
+                    <p>Based on data obtained from testing, we design the expansion phase for the Japanese market.</p>
+                    <ul class="service-features">
+                        <li>Design of Japanese inventory placement (FBA, Rakuten warehouse, 3PL)</li>
+                        <li>Channel expansion to Rakuten, own EC (Shopify, etc.)</li>
+                        <li>Design of general distributor, wholesale, and partner structures according to category</li>
+                        <li>Proposal of timing and options for Japanese entity establishment when necessary</li>
+                    </ul>
+                </div>
+                <div class="service-visual">
+                    <img src="images/souko.jpg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="process">
+        <div class="container">
+            <div class="section-header">
+                <h2>How it works</h2>
+                <p>From initial discussion to full-scale presence in Japan. A clear, step-by-step path.</p>
+            </div>
+            <div class="steps-container">
+                <div class="steps-line"></div>
+                
+                <div class="step-item">
+                    <div class="step-number step-0">0</div>
+                    <div class="step-content">
+                        <h3>Discovery and fit check</h3>
+                        <ul>
+                            <li>Hearing about product category, current sales scale, and target market</li>
+                            <li>Simple diagnosis of regulatory risks and competitive environment in Japan</li>
+                            <li>Sharing rough direction of test objectives, duration, and budget</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Real-market test on Amazon Rakuten</h3>
+                        <ul>
+                            <li>Test listing on Amazon Japan / Rakuten</li>
+                            <li>Recreate Japanese standard delivery experience using FBA and Japanese warehouses</li>
+                            <li>Measure actual CVR and demand through advertising operations and review acquisition</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Scale with local inventory and multi-channel EC</h3>
+                        <ul>
+                            <li>Expand Japanese inventory focusing on best-selling products</li>
+                            <li>Add channels such as Rakuten and own EC</li>
+                            <li>Maximize sales and profits through advertising and page improvements</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Design distribution and long-term model</h3>
+                        <ul>
+                            <li>Consider general distributor or wholesale models based on category and track record</li>
+                            <li>Organize brand position in the Japanese market</li>
+                            <li>Design long-term revenue model and role allocation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Optional: Set up your own Japanese entity</h3>
+                        <ul>
+                            <li>Consider establishing a Japanese entity once sufficient sales scale and reproducibility are confirmed</li>
+                            <li>Support smooth transition in cooperation with tax, accounting, and employment specialists</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2>What you can expect from the test</h2>
+                <p>The goal of the test is not just to make short-term sales, but to understand whether and how your brand can sustainably grow in Japan.</p>
+            </div>
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                        </svg>
+                    </div>
+                    <p>Understand the price range and profit structure that works in Japan</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                        </svg>
+                    </div>
+                    <p>Discover which keywords and appeals generate the best response</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                        </svg>
+                    </div>
+                    <p>See review gaps and evaluation points compared to major competitors</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                        </svg>
+                    </div>
+                    <p>Grasp the balance of sales and profit against advertising costs</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                        </svg>
+                    </div>
+                    <p>Make data-driven decisions on whether to fully enter the Japanese market</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently asked questions</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q">Q</span>
+                        <h3>Do we need to set up a Japanese company?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        No. For the initial test phase, you do not need to set up a Japanese entity. We design the structure so that you can start with minimal fixed cost and flexibility.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q">Q</span>
+                        <h3>Who is responsible for legal compliance in Japan?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        We perform an initial risk check and help you design product listings and ads that align with Japanese regulations. However, final legal responsibility always stays with the manufacturer and the importing entity. If needed, we can introduce legal specialists for high-risk categories such as cosmetics, medical devices and foods.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q">Q</span>
+                        <h3>How much budget do we need for the test?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        It depends on your category and target, but typically you need initial setup and listing cost, plus a minimum monthly ad budget for Amazon or Rakuten. We will propose a concrete test plan and budget range after the discovery call.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q">Q</span>
+                        <h3>Can you also help us find a distributor if the test goes well?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        Yes. Based on the test results and your category, we can support you in designing an exclusive distributor model or approaching potential partners in Japan.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q">Q</span>
+                        <h3>Which categories do you work with?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        We mainly work with consumer products that can be sold via Amazon Japan and Rakuten and that can comply with Japanese regulations. High-risk categories may require additional legal review.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About us</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>We are a Japan-based partner specialised in helping overseas brands enter and grow in the Japanese e-commerce market. With experience in web services, infrastructure and operating EC for Japanese clients, we understand both the technical and regulatory sides of doing business in Japan.</p>
+                    <p class="jp-text">We are a partner specializing in Japan Market Entry who understands both EC operations and regulations within Japan. We design and handle regulations, marketplace operations, logistics, and customer service as an integrated whole for overseas manufacturers entering the Japanese market.</p>
+                </div>
+                <div class="about-info">
+                    <h3>Company Information</h3>
+                    <div class="about-info-item">
+                        <div class="label">Location</div>
+                        <div class="value">Japan</div>
+                    </div>
+                    <div class="about-info-item">
+                        <div class="label">Main Focus</div>
+                        <div class="value">Japan market entry via Amazon, Rakuten and other EC channels</div>
+                    </div>
+                    <div class="about-info-item">
+                        <div class="label">Languages</div>
+                        <div class="value">Japanese, English</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h2>Start your Japan market test</h2>
+                    <p>Considering Japan but not sure where to start? We will review your product, category and goals, and propose a realistic test plan tailored to your situation.</p>
+                    <p class="jp-text">If you're interested in the Japanese market but unsure where to begin, start with a free consultation to tell us about your products and goals. We'll propose a test plan that lets you start with minimal risk.</p>
+                </div>
+                <div class="contact-form">
+                    <form method="post">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="company">Company name</label>
+                                <input type="text" id="company" name="company" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="country">Country</label>
+                                <input type="text" id="country" name="country" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="person">Contact person</label>
+                                <input type="text" id="person" name="person">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Work email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="website">Website or Amazon store link</label>
+                            <input type="url" id="website" name="website">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="category">Product category</label>
+                                <select id="category" name="category">
+                                    <option value="">Select category</option>
+                                    <option value="beauty">Beauty & Personal Care</option>
+                                    <option value="health">Health & Wellness</option>
+                                    <option value="electronics">Electronics</option>
+                                    <option value="home">Home & Kitchen</option>
+                                    <option value="food">Food & Beverage</option>
+                                    <option value="fashion">Fashion & Apparel</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="market">Current main market</label>
+                                <input type="text" id="market" name="market">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="sales">Rough monthly sales (USD)</label>
+                            <select id="sales" name="sales">
+                                <option value="">Select range</option>
+                                <option value="under-10k">Under $10,000</option>
+                                <option value="10k-50k">$10,000 - $50,000</option>
+                                <option value="50k-100k">$50,000 - $100,000</option>
+                                <option value="100k-500k">$100,000 - $500,000</option>
+                                <option value="over-500k">Over $500,000</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="goals">What you want to achieve in Japan</label>
+                            <textarea id="goals" name="goals" placeholder="Tell us about your goals and any specific questions..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-method">Preferred contact method</label>
+                            <select id="contact-method" name="contact-method">
+                                <option value="email">Email</option>
+                                <option value="video">Video call</option>
+                                <option value="phone">Phone</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-submit">Send inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">JBoundex</div>
+                    <p>Your trusted partner for entering and growing in the Japanese e-commerce market.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="market-test.html">Market Test</a></li>
+                        <li><a href="compliance.html">Compliance</a></li>
+                        <li><a href="scaleup.html">Scale-up</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 JBoundex. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="config.js"></script>
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Apply form action from config
+        (function() {
+            const cfg = window.JBOUNDEX_CONFIG || {};
+            const action = cfg.formAction;
+            const form = document.querySelector('.contact-form form');
+            if (form && action) {
+                form.setAttribute('action', action);
+            } else if (!action) {
+                console.warn('formAction is not set in config.js');
+            }
+        })();
+
+    </script>
+</body>
+</html>

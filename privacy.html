@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | JBoundex</title>
+    <link rel="alternate" hreflang="en" href="https://jboundex.com/privacy.html" />
+    <link rel="alternate" hreflang="ja" href="https://jboundex.com/ja/privacy.html" />
+    <link rel="alternate" hreflang="x-default" href="https://jboundex.com/privacy.html" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-red: #bc002d;
+            --primary-red-dark: #8a0021;
+            --primary-red-light: #d4163f;
+            --bg-light: #faf8f8;
+            --bg-white: #ffffff;
+            --text-dark: #1e293b;
+            --text-gray: #64748b;
+            --text-light: #94a3b8;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.7;
+            background-color: var(--bg-white);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            background: var(--bg-white);
+            border-bottom: 1px solid var(--border-color);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--text-gray);
+            font-weight: 400;
+            font-size: 0.875rem;
+            display: block;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-gray);
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary-red);
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 8px;
+            font-size: 0.875rem;
+        }
+
+        .lang-switch a {
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .lang-switch a.active {
+            background: var(--primary-red);
+            color: white;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: var(--bg-light);
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .page-header p {
+            color: var(--text-gray);
+            font-size: 0.9375rem;
+        }
+
+        /* Content */
+        .legal-content {
+            padding: 60px 0;
+        }
+
+        .legal-content section {
+            margin-bottom: 48px;
+        }
+
+        .legal-content h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--primary-red);
+        }
+
+        .legal-content h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 24px 0 12px;
+        }
+
+        .legal-content p {
+            margin-bottom: 16px;
+            color: var(--text-gray);
+            font-size: 0.9375rem;
+        }
+
+        .legal-content ul,
+        .legal-content ol {
+            margin: 16px 0;
+            padding-left: 24px;
+            color: var(--text-gray);
+            font-size: 0.9375rem;
+        }
+
+        .legal-content li {
+            margin-bottom: 8px;
+        }
+
+        .legal-content .note {
+            background: var(--bg-light);
+            padding: 16px 20px;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            color: var(--text-gray);
+            margin: 16px 0;
+        }
+
+        /* Table */
+        .legal-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 0.9375rem;
+        }
+
+        .legal-content th,
+        .legal-content td {
+            border: 1px solid var(--border-color);
+            padding: 12px 16px;
+            text-align: left;
+        }
+
+        .legal-content th {
+            background: var(--bg-light);
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .legal-content td {
+            color: var(--text-gray);
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: var(--bg-light);
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 48px;
+        }
+
+        .toc h2 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            columns: 2;
+            column-gap: 32px;
+        }
+
+        .toc li {
+            margin-bottom: 8px;
+        }
+
+        .toc a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 0.9375rem;
+            transition: color 0.2s;
+        }
+
+        .toc a:hover {
+            color: var(--primary-red);
+        }
+
+        /* Contact Box */
+        .contact-box {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+
+        .contact-box h3 {
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+
+        .contact-box p {
+            margin-bottom: 8px;
+        }
+
+        .contact-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 40px 0;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-inner p {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .page-header {
+                padding: 100px 0 40px;
+            }
+
+            .page-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .toc ul {
+                columns: 1;
+            }
+
+            .legal-content table {
+                font-size: 0.8125rem;
+            }
+
+            .legal-content th,
+            .legal-content td {
+                padding: 8px 12px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+    <div class="header-inner">
+        <a href="index.html" class="logo">
+            JBoundex
+            <span>Japan Market Entry</span>
+        </a>
+        <nav>
+            <a href="index.html#services">Services</a>
+            <a href="index.html#process">Process</a>
+            <a href="index.html#faq">FAQ</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#contact">Contact</a>
+            <div class="lang-switch">
+                <a href="terms.html" class="active">EN</a>
+                <a href="ja/terms.html">JP</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1>Privacy Policy</h1>
+            <p>Last updated: January 1, 2024</p>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="legal-content">
+        <div class="container">
+            
+            <!-- Table of Contents -->
+            <div class="toc">
+                <h2>Table of Contents</h2>
+                <ul>
+                    <li><a href="#section1">1. Introduction</a></li>
+                    <li><a href="#section2">2. Information We Collect</a></li>
+                    <li><a href="#section3">3. How We Use Your Information</a></li>
+                    <li><a href="#section4">4. Information Sharing</a></li>
+                    <li><a href="#section5">5. Data Security</a></li>
+                    <li><a href="#section6">6. Cookies and Tracking</a></li>
+                    <li><a href="#section7">7. Your Rights</a></li>
+                    <li><a href="#section8">8. Data Retention</a></li>
+                    <li><a href="#section9">9. International Data Transfers</a></li>
+                    <li><a href="#section10">10. Children's Privacy</a></li>
+                    <li><a href="#section11">11. Changes to This Policy</a></li>
+                    <li><a href="#section12">12. Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Section 1 -->
+            <section id="section1">
+                <h2>1. Introduction</h2>
+                <p>JBoundex (hereinafter referred to as "Company," "we," "us," or "our") respects your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, and protect your information in connection with our Japan market entry support services (hereinafter referred to as "Services").</p>
+                <p>By using our Services, you consent to the practices described in this Privacy Policy.</p>
+            </section>
+
+            <!-- Section 2 -->
+            <section id="section2">
+                <h2>2. Information We Collect</h2>
+                <p>We may collect the following types of information in connection with providing our Services.</p>
+                
+                <h3>2.1 Information You Provide Directly</h3>
+                <table>
+                    <tr>
+                        <th>Type of Information</th>
+                        <th>Examples</th>
+                    </tr>
+                    <tr>
+                        <td>Company Information</td>
+                        <td>Company name, address, industry, year established, number of employees</td>
+                    </tr>
+                    <tr>
+                        <td>Contact Information</td>
+                        <td>Contact person name, email address, phone number</td>
+                    </tr>
+                    <tr>
+                        <td>Business Information</td>
+                        <td>Product category, sales volume, main markets, business plans</td>
+                    </tr>
+                    <tr>
+                        <td>Product Information</td>
+                        <td>Product names, descriptions, images, pricing, inventory</td>
+                    </tr>
+                    <tr>
+                        <td>Payment Information</td>
+                        <td>Billing address, bank account information</td>
+                    </tr>
+                </table>
+
+                <h3>2.2 Information Collected Automatically</h3>
+                <ul>
+                    <li>IP address</li>
+                    <li>Browser type and version</li>
+                    <li>Operating system</li>
+                    <li>Date and time of access</li>
+                    <li>Referring URL</li>
+                    <li>Pages viewed</li>
+                </ul>
+
+                <h3>2.3 Information from Third Parties</h3>
+                <p>We may obtain information from the following third parties:</p>
+                <ul>
+                    <li>Sales data and customer reviews from EC platforms (Amazon Japan, Rakuten, etc.)</li>
+                    <li>Campaign performance data from advertising platforms</li>
+                    <li>Shipping information from logistics partners</li>
+                </ul>
+            </section>
+
+            <!-- Section 3 -->
+            <section id="section3">
+                <h2>3. How We Use Your Information</h2>
+                <p>We use the information we collect for the following purposes:</p>
+                <ol>
+                    <li><strong>Service Delivery</strong>
+                        <ul>
+                            <li>Providing consulting on Japan market entry</li>
+                            <li>Managing listings and operations on EC platforms</li>
+                            <li>Compliance support</li>
+                            <li>Creating and delivering reports</li>
+                        </ul>
+                    </li>
+                    <li><strong>Communication</strong>
+                        <ul>
+                            <li>Responding to inquiries</li>
+                            <li>Sending important service notifications</li>
+                            <li>Delivering newsletters and marketing information (with consent)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Service Improvement</strong>
+                        <ul>
+                            <li>Analyzing and improving service quality</li>
+                            <li>Developing new services</li>
+                            <li>Improving website usability</li>
+                        </ul>
+                    </li>
+                    <li><strong>Legal Compliance</strong>
+                        <ul>
+                            <li>Complying with legal requirements</li>
+                            <li>Fulfilling contractual obligations</li>
+                            <li>Protecting our rights</li>
+                        </ul>
+                    </li>
+                </ol>
+            </section>
+
+            <!-- Section 4 -->
+            <section id="section4">
+                <h2>4. Information Sharing</h2>
+                <p>We do not share your personal information with third parties except in the following circumstances:</p>
+                
+                <h3>4.1 With Your Consent</h3>
+                <p>We may share your information with third parties when you have given us prior consent.</p>
+
+                <h3>4.2 Service Providers</h3>
+                <p>We may share information with the following third parties as necessary to provide our Services:</p>
+                <ul>
+                    <li>EC platform operators (Amazon Japan, Rakuten, etc.)</li>
+                    <li>Logistics and warehouse partners</li>
+                    <li>Payment processing services</li>
+                    <li>Translation and localization services</li>
+                    <li>Legal and accounting professionals</li>
+                </ul>
+                <div class="note">
+                    These third parties are contractually obligated to handle your information appropriately.
+                </div>
+
+                <h3>4.3 Legal Requirements</h3>
+                <p>We may disclose information when required by law or when necessary to protect our rights, property, or safety.</p>
+
+                <h3>4.4 Business Transfers</h3>
+                <p>In the event of a merger, acquisition, or business transfer, your information may be transferred to the successor. We will notify you in advance in such cases.</p>
+            </section>
+
+            <!-- Section 5 -->
+            <section id="section5">
+                <h2>5. Data Security</h2>
+                <p>We implement the following security measures to protect your information:</p>
+                <ul>
+                    <li><strong>Technical Measures</strong>
+                        <ul>
+                            <li>SSL/TLS encrypted communications</li>
+                            <li>Firewall protection against unauthorized access</li>
+                            <li>Regular security updates</li>
+                            <li>Access log monitoring</li>
+                        </ul>
+                    </li>
+                    <li><strong>Organizational Measures</strong>
+                        <ul>
+                            <li>Restricted access to information</li>
+                            <li>Information security training for employees</li>
+                            <li>Confidentiality agreements</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>However, no method of transmission over the Internet is completely secure. Please also take care to protect your own passwords and credentials.</p>
+            </section>
+
+            <!-- Section 6 -->
+            <section id="section6">
+                <h2>6. Cookies and Tracking Technologies</h2>
+                
+                <h3>6.1 What Are Cookies</h3>
+                <p>Cookies are small text files that websites store on your browser. Our website uses cookies for the following purposes.</p>
+                
+                <h3>6.2 Types of Cookies We Use</h3>
+                <table>
+                    <tr>
+                        <th>Type</th>
+                        <th>Purpose</th>
+                    </tr>
+                    <tr>
+                        <td>Essential Cookies</td>
+                        <td>Required for basic website functionality</td>
+                    </tr>
+                    <tr>
+                        <td>Analytics Cookies</td>
+                        <td>Analyzing website usage (Google Analytics, etc.)</td>
+                    </tr>
+                    <tr>
+                        <td>Functional Cookies</td>
+                        <td>Storing user preferences such as language settings</td>
+                    </tr>
+                </table>
+
+                <h3>6.3 Managing Cookies</h3>
+                <p>You can disable cookies through your browser settings. However, disabling cookies may affect the functionality of some parts of our website.</p>
+            </section>
+
+            <!-- Section 7 -->
+            <section id="section7">
+                <h2>7. Your Rights</h2>
+                <p>You have the following rights regarding your personal information:</p>
+                <ul>
+                    <li><strong>Right to Access</strong>: You can request disclosure of your personal information held by us</li>
+                    <li><strong>Right to Rectification</strong>: You can request correction of inaccurate personal information</li>
+                    <li><strong>Right to Erasure</strong>: Under certain conditions, you can request deletion of your personal information</li>
+                    <li><strong>Right to Restrict Processing</strong>: You can request that we stop using your personal information</li>
+                    <li><strong>Right to Object to Third-Party Sharing</strong>: You can request that we stop sharing your information with third parties</li>
+                </ul>
+                <p>To exercise these rights, please contact us using the information provided at the end of this policy. We may require identification verification.</p>
+                <div class="note">
+                    Note: We may not be able to comply with deletion or restriction requests for information that we are legally required to retain.
+                </div>
+            </section>
+
+            <!-- Section 8 -->
+            <section id="section8">
+                <h2>8. Data Retention</h2>
+                <p>We retain collected information for the following periods:</p>
+                <table>
+                    <tr>
+                        <th>Type of Information</th>
+                        <th>Retention Period</th>
+                    </tr>
+                    <tr>
+                        <td>Contract-related Information</td>
+                        <td>10 years after contract termination</td>
+                    </tr>
+                    <tr>
+                        <td>Transaction Records</td>
+                        <td>7 years after transaction (as required by law)</td>
+                    </tr>
+                    <tr>
+                        <td>Inquiry History</td>
+                        <td>3 years after resolution</td>
+                    </tr>
+                    <tr>
+                        <td>Access Logs</td>
+                        <td>1 year after collection</td>
+                    </tr>
+                </table>
+                <p>After the retention period expires or when retention is no longer necessary, we will promptly delete or anonymize the information.</p>
+            </section>
+
+            <!-- Section 9 -->
+            <section id="section9">
+                <h2>9. International Data Transfers</h2>
+                <p>In providing our Services, we may transfer your information outside of Japan. In such cases, we take the following measures:</p>
+                <ul>
+                    <li>Verifying the data protection regulations of the destination country or region</li>
+                    <li>Entering into appropriate contracts with transfer recipients</li>
+                    <li>Confirming implementation of appropriate security measures</li>
+                </ul>
+            </section>
+
+            <!-- Section 10 -->
+            <section id="section10">
+                <h2>10. Children's Privacy</h2>
+                <p>Our Services are intended for corporations and sole proprietors and are not directed at individuals under 18 years of age. We do not knowingly collect personal information from anyone under 18.</p>
+            </section>
+
+            <!-- Section 11 -->
+            <section id="section11">
+                <h2>11. Changes to This Policy</h2>
+                <p>We may update this Privacy Policy due to changes in laws, changes in our services, or other reasons.</p>
+                <p>For significant changes, we will notify you through appropriate means such as posting on our website or sending an email. The updated Privacy Policy will become effective upon posting on our website.</p>
+            </section>
+
+            <!-- Section 12 -->
+            <section id="section12">
+                <h2>12. Contact Us</h2>
+                <p>For questions about this Privacy Policy or requests for disclosure, correction, or deletion of personal information, please contact us at:</p>
+                
+                <div class="contact-box">
+                    <h3>Privacy Inquiries</h3>
+                    <p><strong>JBoundex</strong></p>
+                    <p>Email: privacy@jboundex.com</p>
+                    <p>Business Hours: Weekdays 10:00 AM - 6:00 PM (Japan Time)</p>
+                </div>
+
+                <p>When contacting us, please provide the following information:</p>
+                <ul>
+                    <li>Your name (company name)</li>
+                    <li>Contact information</li>
+                    <li>Details of your inquiry</li>
+                </ul>
+            </section>
+
+            <div class="note" style="margin-top: 48px;">
+                <p style="margin-bottom: 8px;"><strong>Effective Date:</strong> January 1, 2024</p>
+                <p style="margin-bottom: 0;"><strong>Last Updated:</strong> January 1, 2024</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+    <div class="footer-inner">
+        <p>&copy; 2024 JBoundex. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header shadow on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scale-up & Distribution Design | JBoundex</title>
+    <link rel="alternate" hreflang="en" href="https://jboundex.com/scaleup.html" />
+    <link rel="alternate" hreflang="ja" href="https://jboundex.com/ja/scaleup.html" />
+    <link rel="alternate" hreflang="x-default" href="https://jboundex.com/scaleup.html" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-red: #bc002d;
+            --primary-red-dark: #8a0021;
+            --primary-red-light: #d4163f;
+            --accent-red: #e63950;
+            --bg-light: #faf8f8;
+            --bg-white: #ffffff;
+            --text-dark: #1e293b;
+            --text-gray: #64748b;
+            --text-light: #94a3b8;
+            --border-color: #e2e8f0;
+            --success-green: #22c55e;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.8;
+            background-color: var(--bg-white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .container-narrow {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            background: var(--bg-white);
+            border-bottom: 1px solid var(--border-color);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--text-gray);
+            font-weight: 400;
+            font-size: 0.875rem;
+            display: block;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-gray);
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary-red);
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 8px;
+            font-size: 0.875rem;
+        }
+
+        .lang-switch a {
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .lang-switch a.active {
+            background: var(--primary-red);
+            color: white;
+        }
+
+        /* Hero Section */
+        .page-hero {
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-red-dark) 100%);
+            color: white;
+            padding: 140px 0 80px;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .page-hero .subtitle {
+            font-size: 1.125rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto 32px;
+            line-height: 1.8;
+        }
+
+        .breadcrumb {
+            font-size: 0.875rem;
+            opacity: 0.8;
+            margin-bottom: 24px;
+        }
+
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            margin: 0 8px;
+        }
+
+        /* Lead Section */
+        .lead-section {
+            padding: 60px 0;
+            background: var(--bg-white);
+        }
+
+        .lead-text {
+            font-size: 1.0625rem;
+            color: var(--text-gray);
+            line-height: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 60px 0;
+        }
+
+        .content-section:nth-child(even) {
+            background: var(--bg-light);
+        }
+
+        .content-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid var(--primary-red);
+            display: inline-block;
+        }
+
+        .content-section p {
+            font-size: 1rem;
+            color: var(--text-gray);
+            line-height: 1.9;
+            margin-bottom: 16px;
+        }
+
+        .content-section ul {
+            list-style: none;
+            margin: 24px 0;
+        }
+
+        .content-section ul li {
+            padding: 12px 0;
+            padding-left: 28px;
+            position: relative;
+            font-size: 1rem;
+            color: var(--text-dark);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .content-section ul li:last-child {
+            border-bottom: none;
+        }
+
+        .content-section ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success-green);
+            font-weight: 600;
+        }
+
+        /* Service Grid */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .service-box {
+            background: white;
+            border-radius: 12px;
+            padding: 28px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border: 1px solid var(--border-color);
+        }
+
+        .service-box .icon {
+            width: 48px;
+            height: 48px;
+            background: var(--bg-light);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+
+        .service-box .icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--primary-red);
+        }
+
+        .service-box h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .service-box p {
+            font-size: 0.9375rem;
+            color: var(--text-gray);
+            margin-bottom: 0;
+            line-height: 1.7;
+        }
+
+        /* Results Section */
+        .results-list {
+            background: white;
+            border-radius: 12px;
+            padding: 32px;
+            margin-top: 24px;
+            border: 1px solid var(--border-color);
+        }
+
+        .results-list ul {
+            margin: 0;
+        }
+
+        .results-list ul li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .results-list ul li:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .results-list ul li:first-child {
+            padding-top: 0;
+        }
+
+        .results-list ul li::before {
+            display: none;
+        }
+
+        .results-list .check-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--success-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .results-list .check-icon svg {
+            width: 14px;
+            height: 14px;
+            color: white;
+        }
+
+        .results-list .result-text {
+            font-size: 1rem;
+            color: var(--text-dark);
+            padding-left: 0;
+        }
+
+        /* Process Steps */
+        .process-steps {
+            margin-top: 32px;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 0;
+            position: relative;
+        }
+
+        .step-item::after {
+            content: '';
+            position: absolute;
+            left: 23px;
+            top: 48px;
+            bottom: -24px;
+            width: 2px;
+            background: var(--border-color);
+        }
+
+        .step-item:last-child::after {
+            display: none;
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: var(--primary-red);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-content {
+            flex: 1;
+            padding-bottom: 32px;
+        }
+
+        .step-item:last-child .step-content {
+            padding-bottom: 0;
+        }
+
+        .step-content h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .step-content p {
+            font-size: 0.9375rem;
+            color: var(--text-gray);
+            margin-bottom: 0;
+        }
+
+        /* Summary Box */
+        .summary-box {
+            background: var(--bg-light);
+            border-left: 4px solid var(--primary-red);
+            padding: 24px;
+            margin-top: 32px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .summary-box p {
+            font-size: 1rem;
+            color: var(--text-dark);
+            margin-bottom: 0;
+            font-weight: 500;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--primary-red);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            font-size: 1.0625rem;
+            opacity: 0.95;
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary-red);
+        }
+
+        .btn-white:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        /* Related Services */
+        .related-services {
+            padding: 80px 0;
+            background: var(--bg-light);
+        }
+
+        .related-services h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            padding: 32px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s;
+            border: 1px solid var(--border-color);
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--primary-red);
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            font-size: 0.9375rem;
+            color: var(--text-gray);
+            margin-bottom: 16px;
+        }
+
+        .service-card .link-text {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--primary-red);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand .logo {
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .footer-links h4 {
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: white;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .page-hero {
+                padding: 120px 0 60px;
+            }
+
+            .page-hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .content-section {
+                padding: 40px 0;
+            }
+
+            .content-section h2 {
+                font-size: 1.25rem;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .step-item {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .step-item::after {
+                display: none;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                JBoundex
+                <span>日本市場参入支援</span>
+            </a>
+            <nav>
+                <a href="index.html#services">サービス</a>
+                <a href="index.html#process">プロセス</a>
+                <a href="index.html#faq">よくある質問</a>
+                <a href="index.html#about">会社概要</a>
+                <a href="index.html#contact">お問い合わせ</a>
+                <div class="lang-switch">
+                    <a href="../scaleup.html">EN</a>
+                    <a href="scaleup.html" class="active">JP</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">ホーム</a>
+                <span>›</span>
+                <a href="index.html#services">サービス</a>
+                <span>›</span>
+                スケールアップ
+            </div>
+            <h1>Scale-up & Distribution Design</h1>
+            <p class="subtitle">テストで得られたデータをもとに、日本市場での売上最大化と長期成長モデルを設計します。</p>
+        </div>
+    </section>
+
+    <!-- Lead Section -->
+    <section class="lead-section">
+        <div class="container-narrow">
+            <p class="lead-text">
+                テストフェーズが成功した後は、日本市場での継続的な成長に向けて"どう拡大するか"が重要です。当社は、在庫戦略・広告最適化・販売チャネル拡大・流通モデル設計まで、日本進出後の成長フェーズを一括で支援します。
+            </p>
+        </div>
+    </section>
+
+    <!-- Section 1: Service Content -->
+    <section class="content-section">
+        <div class="container-narrow">
+            <h2>提供内容</h2>
+            <div class="service-grid">
+                <div class="service-box">
+                    <div class="icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                        </svg>
+                    </div>
+                    <h3>在庫最適化</h3>
+                    <p>FBA、楽天倉庫、3PLを組み合わせた最適な在庫配置を設計します。</p>
+                </div>
+                <div class="service-box">
+                    <div class="icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3>マルチチャネル展開</h3>
+                    <p>楽天市場、自社EC、Yahoo、Qoo10などへのチャネル拡大を支援します。</p>
+                </div>
+                <div class="service-box">
+                    <div class="icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                    </div>
+                    <h3>広告高度最適化</h3>
+                    <p>ROAS改善、SKU別戦略による広告運用の高度最適化を実施します。</p>
+                </div>
+                <div class="service-box">
+                    <div class="icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+                        </svg>
+                    </div>
+                    <h3>レビュー・CVR強化</h3>
+                    <p>レビュー運用の強化とCVR最適化で自走力を高めます。</p>
+                </div>
+                <div class="service-box">
+                    <div class="icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3>流通モデル設計</h3>
+                    <p>カテゴリに応じた総代理店・卸のモデルを設計します。</p>
+                </div>
+                <div class="service-box">
+                    <div class="icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                        </svg>
+                    </div>
+                    <h3>法人設立支援</h3>
+                    <p>日本法人設立のタイミングと選択肢を提案します。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Expected Results -->
+    <section class="content-section">
+        <div class="container-narrow">
+            <h2>スケールアップで見込める成果</h2>
+            <div class="results-list">
+                <ul>
+                    <li>
+                        <span class="check-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </span>
+                        <span class="result-text">売れ筋SKUへの集中投資と利益率最大化</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </span>
+                        <span class="result-text">複数チャネル化による売上安定化</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </span>
+                        <span class="result-text">レビュー・SEOの積み上げによる自走力強化</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </span>
+                        <span class="result-text">卸や代理店との組み合わせによる販路拡大</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </span>
+                        <span class="result-text">日本市場における長期的ブランド構築</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Process -->
+    <section class="content-section">
+        <div class="container-narrow">
+            <h2>スケールアップの進め方</h2>
+            <div class="process-steps">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>テスト結果の分析</h3>
+                        <p>テストフェーズで得られたデータを詳細に分析し、成功要因と課題を明確にします。</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>勝ち筋SKUの選定</h3>
+                        <p>データに基づいて、日本市場で最も成長ポテンシャルの高い商品を特定します。</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>日本在庫戦略の設計</h3>
+                        <p>FBA、楽天倉庫、3PLの最適な組み合わせで在庫配置を設計します。</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Amazon / 楽天の運用最適化</h3>
+                        <p>広告運用、ページ改善、レビュー施策を強化し、売上と利益を最大化します。</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>他チャネルへの拡大</h3>
+                        <p>楽天、Yahoo、自社ECなど、追加チャネルへの展開を実行します。</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h3>卸・代理店との連携 or 法人設立の判断</h3>
+                        <p>カテゴリと実績に応じて、最適な流通モデルまたは法人設立を検討します。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="summary-box">
+                <p>これにより、テストから本格展開までのスムーズな移行を実現します。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>スケールアップ相談</h2>
+            <p>テストで手応えを感じている方、本格展開を検討している方は、ぜひご相談ください。御社の状況に合わせた成長戦略をご提案します。</p>
+            <a href="index.html#contact" class="btn btn-white">スケールアップ相談を予約する</a>
+        </div>
+    </section>
+
+    <!-- Related Services -->
+    <section class="related-services">
+        <div class="container">
+            <h2>関連サービス</h2>
+            <div class="services-grid">
+                <a href="market-test.html" class="service-card">
+                    <h3>Japan Market Test Program</h3>
+                    <p>日本法人や総代理店契約なしで、日本市場で本当に売れるかを、最小リスクで検証するプログラムです。</p>
+                    <span class="link-text">詳しく見る →</span>
+                </a>
+                <a href="compliance.html" class="service-card">
+                    <h3>Compliance + Brand Setup</h3>
+                    <p>日本で売るために必要な法規制チェック、JANコード、商標登録、Brand Registry を含む"販売の基盤"を整えます。</p>
+                    <span class="link-text">詳しく見る →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">JBoundex</div>
+                    <p>日本EC市場への参入と成長を支援する、信頼できるパートナーです。</p>
+                </div>
+                <div class="footer-links">
+                    <h4>サービス</h4>
+                    <ul>
+                        <li><a href="market-test.html">マーケットテスト</a></li>
+                        <li><a href="compliance.html">コンプライアンス</a></li>
+                        <li><a href="scaleup.html">スケールアップ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>会社情報</h4>
+                    <ul>
+                        <li><a href="index.html#about">会社概要</a></li>
+                        <li><a href="index.html#faq">よくある質問</a></li>
+                        <li><a href="index.html#contact">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>法的情報</h4>
+                    <ul>
+                        <li><a href="privacy.html">プライバシーポリシー</a></li>
+                        <li><a href="terms.html">利用規約</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 JBoundex. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header shadow on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

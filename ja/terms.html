@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>利用規約 | JBoundex</title>
+    <link rel="alternate" hreflang="en" href="https://jboundex.com/terms.html" />
+    <link rel="alternate" hreflang="ja" href="https://jboundex.com/ja/terms.html" />
+    <link rel="alternate" hreflang="x-default" href="https://jboundex.com/terms.html" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-red: #bc002d;
+            --primary-red-dark: #8a0021;
+            --primary-red-light: #d4163f;
+            --bg-light: #faf8f8;
+            --bg-white: #ffffff;
+            --text-dark: #1e293b;
+            --text-gray: #64748b;
+            --text-light: #94a3b8;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.8;
+            background-color: var(--bg-white);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            background: var(--bg-white);
+            border-bottom: 1px solid var(--border-color);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--text-gray);
+            font-weight: 400;
+            font-size: 0.875rem;
+            display: block;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-gray);
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary-red);
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 8px;
+            font-size: 0.875rem;
+        }
+
+        .lang-switch a {
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .lang-switch a.active {
+            background: var(--primary-red);
+            color: white;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: var(--bg-light);
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .page-header p {
+            color: var(--text-gray);
+            font-size: 0.9375rem;
+        }
+
+        /* Content */
+        .legal-content {
+            padding: 60px 0;
+        }
+
+        .legal-content section {
+            margin-bottom: 48px;
+        }
+
+        .legal-content h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--primary-red);
+        }
+
+        .legal-content h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 24px 0 12px;
+        }
+
+        .legal-content p {
+            margin-bottom: 16px;
+            color: var(--text-gray);
+            font-size: 0.9375rem;
+        }
+
+        .legal-content ul,
+        .legal-content ol {
+            margin: 16px 0;
+            padding-left: 24px;
+            color: var(--text-gray);
+            font-size: 0.9375rem;
+        }
+
+        .legal-content li {
+            margin-bottom: 8px;
+        }
+
+        .legal-content .note {
+            background: var(--bg-light);
+            padding: 16px 20px;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            color: var(--text-gray);
+            margin: 16px 0;
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: var(--bg-light);
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 48px;
+        }
+
+        .toc h2 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc li {
+            margin-bottom: 8px;
+        }
+
+        .toc a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 0.9375rem;
+            transition: color 0.2s;
+        }
+
+        .toc a:hover {
+            color: var(--primary-red);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 40px 0;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-inner p {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .page-header {
+                padding: 100px 0 40px;
+            }
+
+            .page-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+    <div class="header-inner">
+        <a href="index.html" class="logo">
+            JBoundex
+            <span>日本市場参入支援</span>
+        </a>
+        <nav>
+            <a href="index.html#services">サービス</a>
+            <a href="index.html#process">プロセス</a>
+            <a href="index.html#faq">よくある質問</a>
+            <a href="index.html#about">会社概要</a>
+            <a href="index.html#contact">お問い合わせ</a>
+            <div class="lang-switch">
+                <a href="../terms.html">EN</a>
+                <a href="terms.html" class="active">JP</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1>利用規約</h1>
+            <p>最終更新日: 2024年1月1日</p>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="legal-content">
+        <div class="container">
+            
+            <!-- Table of Contents -->
+            <div class="toc">
+                <h2>目次</h2>
+                <ul>
+                    <li><a href="#article1">第1条 総則</a></li>
+                    <li><a href="#article2">第2条 定義</a></li>
+                    <li><a href="#article3">第3条 サービス内容</a></li>
+                    <li><a href="#article4">第4条 契約の成立</a></li>
+                    <li><a href="#article5">第5条 料金および支払い</a></li>
+                    <li><a href="#article6">第6条 ユーザーの義務</a></li>
+                    <li><a href="#article7">第7条 禁止事項</a></li>
+                    <li><a href="#article8">第8条 知的財産権</a></li>
+                    <li><a href="#article9">第9条 秘密保持</a></li>
+                    <li><a href="#article10">第10条 免責事項</a></li>
+                    <li><a href="#article11">第11条 損害賠償</a></li>
+                    <li><a href="#article12">第12条 契約の解除</a></li>
+                    <li><a href="#article13">第13条 反社会的勢力の排除</a></li>
+                    <li><a href="#article14">第14条 規約の変更</a></li>
+                    <li><a href="#article15">第15条 準拠法および管轄裁判所</a></li>
+                </ul>
+            </div>
+
+            <!-- Article 1 -->
+            <section id="article1">
+                <h2>第1条 総則</h2>
+                <p>本利用規約（以下「本規約」といいます）は、JBoundex（以下「当社」といいます）が提供する日本市場参入支援サービス（以下「本サービス」といいます）の利用条件を定めるものです。</p>
+                <p>本サービスをご利用いただくすべてのお客様（以下「ユーザー」といいます）は、本規約に同意したものとみなします。</p>
+            </section>
+
+            <!-- Article 2 -->
+            <section id="article2">
+                <h2>第2条 定義</h2>
+                <p>本規約において使用する用語の定義は、以下のとおりとします。</p>
+                <ol>
+                    <li><strong>「本サービス」</strong>とは、当社が提供する日本市場参入支援に関するコンサルティング、EC運用代行、コンプライアンス支援、その他関連サービスの総称をいいます。</li>
+                    <li><strong>「ユーザー」</strong>とは、本サービスを利用する法人または個人事業主をいいます。</li>
+                    <li><strong>「契約」</strong>とは、本規約に基づき当社とユーザーの間で締結されるサービス利用契約をいいます。</li>
+                    <li><strong>「成果物」</strong>とは、本サービスの提供に伴い当社が作成する資料、レポート、その他の制作物をいいます。</li>
+                </ol>
+            </section>
+
+            <!-- Article 3 -->
+            <section id="article3">
+                <h2>第3条 サービス内容</h2>
+                <p>当社は、以下のサービスを提供します。具体的なサービス内容は、個別の契約において定めます。</p>
+                <ol>
+                    <li>日本市場参入に関するコンサルティング</li>
+                    <li>Amazon Japan、楽天市場等のECプラットフォームにおける出品・運用代行</li>
+                    <li>日本の法規制（薬機法、景表法、電気用品安全法等）に関するコンプライアンス支援</li>
+                    <li>商品ページ、広告クリエイティブの制作</li>
+                    <li>物流・フルフィルメントの設計支援</li>
+                    <li>その他、日本市場参入に関連するサービス</li>
+                </ol>
+                <div class="note">
+                    ※ 当社は、サービス内容を予告なく変更する場合があります。重要な変更については、事前にユーザーに通知します。
+                </div>
+            </section>
+
+            <!-- Article 4 -->
+            <section id="article4">
+                <h2>第4条 契約の成立</h2>
+                <ol>
+                    <li>ユーザーは、当社所定の方法により本サービスの利用を申し込むものとします。</li>
+                    <li>契約は、当社がユーザーの申込みを承諾し、その旨を通知した時点で成立するものとします。</li>
+                    <li>当社は、以下の場合に申込みを承諾しないことがあります。
+                        <ul>
+                            <li>申込み内容に虚偽、誤記または記入漏れがあった場合</li>
+                            <li>ユーザーが過去に本規約に違反したことがある場合</li>
+                            <li>その他、当社が不適切と判断した場合</li>
+                        </ul>
+                    </li>
+                </ol>
+            </section>
+
+            <!-- Article 5 -->
+            <section id="article5">
+                <h2>第5条 料金および支払い</h2>
+                <ol>
+                    <li>本サービスの料金は、個別の契約において定めます。</li>
+                    <li>ユーザーは、当社が指定する方法および期日までに料金を支払うものとします。</li>
+                    <li>支払いを遅延した場合、ユーザーは年14.6%の割合による遅延損害金を支払うものとします。</li>
+                    <li>当社は、経済状況の変化その他の事由により、料金を改定する場合があります。料金改定は、事前にユーザーに通知します。</li>
+                </ol>
+            </section>
+
+            <!-- Article 6 -->
+            <section id="article6">
+                <h2>第6条 ユーザーの義務</h2>
+                <p>ユーザーは、本サービスの利用にあたり、以下の義務を負うものとします。</p>
+                <ol>
+                    <li>本サービスの提供に必要な情報、資料、データ等を正確かつ適時に当社に提供すること</li>
+                    <li>当社からの問い合わせに対し、合理的な期間内に回答すること</li>
+                    <li>自社の商品が日本の法令に適合していることを確認し、必要な許認可等を取得すること</li>
+                    <li>本規約および個別契約の条項を遵守すること</li>
+                </ol>
+            </section>
+
+            <!-- Article 7 -->
+            <section id="article7">
+                <h2>第7条 禁止事項</h2>
+                <p>ユーザーは、本サービスの利用にあたり、以下の行為を行ってはなりません。</p>
+                <ol>
+                    <li>法令または公序良俗に違反する行為</li>
+                    <li>当社または第三者の知的財産権、プライバシー権、その他の権利を侵害する行為</li>
+                    <li>虚偽の情報を提供する行為</li>
+                    <li>本サービスの運営を妨害する行為</li>
+                    <li>当社の承諾なく、本サービスを第三者に再販売、再提供する行為</li>
+                    <li>その他、当社が不適切と判断する行為</li>
+                </ol>
+            </section>
+
+            <!-- Article 8 -->
+            <section id="article8">
+                <h2>第8条 知的財産権</h2>
+                <ol>
+                    <li>本サービスに関する著作権、商標権その他の知的財産権は、当社または正当な権利者に帰属します。</li>
+                    <li>成果物の知的財産権の帰属は、個別の契約において定めます。特段の定めがない場合、成果物の著作権は当社に帰属し、ユーザーには利用権が許諾されるものとします。</li>
+                    <li>ユーザーが提供した商品情報、画像等の素材に関する知的財産権は、ユーザーに帰属します。</li>
+                </ol>
+            </section>
+
+            <!-- Article 9 -->
+            <section id="article9">
+                <h2>第9条 秘密保持</h2>
+                <ol>
+                    <li>当社およびユーザーは、本サービスの提供に関連して知り得た相手方の秘密情報を、相手方の事前の書面による承諾なく第三者に開示または漏洩してはなりません。</li>
+                    <li>前項の秘密保持義務は、以下の情報には適用されません。
+                        <ul>
+                            <li>開示を受けた時点で既に公知であった情報</li>
+                            <li>開示を受けた後、自己の責によらず公知となった情報</li>
+                            <li>開示を受ける前から正当に保有していた情報</li>
+                            <li>正当な権限を有する第三者から秘密保持義務を負うことなく取得した情報</li>
+                        </ul>
+                    </li>
+                    <li>本条の秘密保持義務は、契約終了後も3年間存続するものとします。</li>
+                </ol>
+            </section>
+
+            <!-- Article 10 -->
+            <section id="article10">
+                <h2>第10条 免責事項</h2>
+                <ol>
+                    <li>当社は、本サービスの提供にあたり善良なる管理者の注意をもって業務を遂行しますが、特定の成果や結果を保証するものではありません。</li>
+                    <li>当社は、以下の事由により生じた損害について責任を負いません。
+                        <ul>
+                            <li>ユーザーが提供した情報の誤り、不足に起因する損害</li>
+                            <li>ECプラットフォーム（Amazon Japan、楽天市場等）の仕様変更、障害、アカウント停止等に起因する損害</li>
+                            <li>日本の法規制の変更に起因する損害</li>
+                            <li>天災、戦争、テロ、その他の不可抗力に起因する損害</li>
+                        </ul>
+                    </li>
+                    <li>当社は、ユーザーの商品が日本の法令に適合することを保証するものではありません。法令適合性の最終的な判断および責任はユーザーに帰属します。</li>
+                </ol>
+            </section>
+
+            <!-- Article 11 -->
+            <section id="article11">
+                <h2>第11条 損害賠償</h2>
+                <ol>
+                    <li>当社は、本サービスに関連してユーザーに生じた損害について、当社の故意または重過失による場合を除き、ユーザーが当社に支払った直近12ヶ月分のサービス料金の総額を上限として賠償責任を負うものとします。</li>
+                    <li>当社は、間接損害、特別損害、逸失利益、データの喪失については、予見の有無にかかわらず責任を負いません。</li>
+                </ol>
+            </section>
+
+            <!-- Article 12 -->
+            <section id="article12">
+                <h2>第12条 契約の解除</h2>
+                <ol>
+                    <li>当社またはユーザーは、相手方が以下のいずれかに該当した場合、催告なく直ちに契約を解除することができます。
+                        <ul>
+                            <li>本規約に違反し、相当期間を定めた催告にもかかわらず是正されない場合</li>
+                            <li>支払停止または支払不能となった場合</li>
+                            <li>破産手続、民事再生手続、会社更生手続の申立てがあった場合</li>
+                            <li>解散または事業の全部もしくは重要な一部を譲渡した場合</li>
+                        </ul>
+                    </li>
+                    <li>ユーザーは、30日前までに書面で通知することにより、契約を解約することができます。</li>
+                    <li>契約終了時において未払いの料金がある場合、ユーザーは直ちにこれを支払うものとします。</li>
+                </ol>
+            </section>
+
+            <!-- Article 13 -->
+            <section id="article13">
+                <h2>第13条 反社会的勢力の排除</h2>
+                <ol>
+                    <li>当社およびユーザーは、自らが暴力団、暴力団員、暴力団関係企業、その他の反社会的勢力に該当しないことを表明し、保証します。</li>
+                    <li>当社またはユーザーは、相手方が前項に違反した場合、催告なく直ちに契約を解除することができます。</li>
+                </ol>
+            </section>
+
+            <!-- Article 14 -->
+            <section id="article14">
+                <h2>第14条 規約の変更</h2>
+                <ol>
+                    <li>当社は、以下の場合に本規約を変更することができます。
+                        <ul>
+                            <li>本規約の変更がユーザーの一般の利益に適合する場合</li>
+                            <li>本規約の変更が契約の目的に反せず、変更の必要性、変更後の内容の相当性その他の事情に照らして合理的なものである場合</li>
+                        </ul>
+                    </li>
+                    <li>当社は、本規約を変更する場合、変更の効力発生日の30日前までに、変更後の内容および効力発生日をウェブサイト上で告知します。</li>
+                </ol>
+            </section>
+
+            <!-- Article 15 -->
+            <section id="article15">
+                <h2>第15条 準拠法および管轄裁判所</h2>
+                <ol>
+                    <li>本規約は、日本法に準拠し、日本法に従って解釈されるものとします。</li>
+                    <li>本規約または本サービスに関する一切の紛争については、東京地方裁判所を第一審の専属的合意管轄裁判所とします。</li>
+                </ol>
+            </section>
+
+            <div class="note" style="margin-top: 48px;">
+                <p style="margin-bottom: 8px;"><strong>制定日:</strong> 2024年1月1日</p>
+                <p style="margin-bottom: 0;"><strong>最終更新日:</strong> 2024年1月1日</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+    <div class="footer-inner">
+        <p>&copy; 2024 JBoundex. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="index.html">ホーム</a>
+            <a href="terms.html">利用規約</a>
+            <a href="privacy.html">プライバシーポリシー</a>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header shadow on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
