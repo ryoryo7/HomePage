@@ -1545,7 +1545,7 @@
                     <p class="jp-text">If you're interested in the Japanese market but unsure where to begin, start with a free consultation to tell us about your products and goals. We'll propose a test plan that lets you start with minimal risk.</p>
                 </div>
                 <div class="contact-form">
-                    <form method="post">
+                    <form method="post" id="contact-form-en">
                         <input type="hidden" name="lang" value="en">
                         <div class="form-row">
                             <div class="form-group">
@@ -1696,26 +1696,65 @@
             }
         });
 
-        // Apply form action from config
+        // Submit via JS using config endpoint to avoid navigation
         (function() {
             const cfg = window.JBOUNDEX_CONFIG || {};
-            const action = cfg.formAction;
-            const form = document.querySelector('.contact-form form');
+            const endpoint = cfg.formAction;
+            const form = document.getElementById('contact-form-en');
             const submitButton = form ? form.querySelector('.btn-submit') : null;
             const consentCheckbox = form ? form.querySelector('#privacy-consent') : null;
-            if (form && action) {
-                form.setAttribute('action', action);
-            } else if (!action) {
+
+            if (!endpoint) {
                 console.warn('formAction is not set in config.js');
             }
 
-            if (form && submitButton && consentCheckbox) {
-                const toggleSubmitState = () => {
-                    submitButton.disabled = !consentCheckbox.checked;
-                };
+            const toggleSubmitState = (form && submitButton && consentCheckbox)
+                ? () => { submitButton.disabled = !consentCheckbox.checked; }
+                : null;
+
+            if (toggleSubmitState && consentCheckbox) {
                 toggleSubmitState();
                 consentCheckbox.addEventListener('change', toggleSubmitState);
             }
+
+            if (!form) {
+                return;
+            }
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                if (!endpoint) {
+                    alert('The form endpoint is not configured yet. Please try again later.');
+                    return;
+                }
+
+                const formData = new FormData(form);
+
+                if (submitButton) {
+                    submitButton.disabled = true;
+                }
+
+                fetch(endpoint, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors'
+                }).then(function() {
+                    alert('Your inquiry has been sent. Thank you.');
+                    form.reset();
+                    if (toggleSubmitState) {
+                        toggleSubmitState();
+                    } else if (submitButton) {
+                        submitButton.disabled = false;
+                    }
+                }).catch(function(err) {
+                    console.error(err);
+                    alert('We could not send your inquiry. Please try again in a moment.');
+                    if (submitButton) {
+                        submitButton.disabled = false;
+                    }
+                });
+            });
         })();
 
     </script>

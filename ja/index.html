@@ -1515,7 +1515,7 @@
                     <p>御社の状況に合わせた現実的なテストプランをご提案します。最小限のリスクで日本市場の可能性を検証できます。</p>
                 </div>
                 <div class="contact-form">
-                    <form method="post">
+                    <form method="post" id="contact-form-ja">
                         <input type="hidden" name="lang" value="ja">
                         <div class="form-row">
                             <div class="form-group">
@@ -1666,27 +1666,65 @@
             }
         });
 
-        // 設定ファイルから送信先を適用
+        // 設定ファイルの送信先を使ってページ遷移なしで送信
         (function() {
             const cfg = window.JBOUNDEX_CONFIG || {};
-            const action = cfg.formAction;
-            const form = document.querySelector('.contact-form form');
+            const endpoint = cfg.formAction;
+            const form = document.getElementById('contact-form-ja');
             const submitButton = form ? form.querySelector('.btn-submit') : null;
             const consentCheckbox = form ? form.querySelector('#privacy-consent') : null;
 
-            if (form && action) {
-                form.setAttribute('action', action);
-            } else if (!action) {
+            if (!endpoint) {
                 console.warn('formAction is not set in config.js');
             }
 
-            if (form && submitButton && consentCheckbox) {
-                const toggleSubmitState = () => {
-                    submitButton.disabled = !consentCheckbox.checked;
-                };
+            const toggleSubmitState = (form && submitButton && consentCheckbox)
+                ? () => { submitButton.disabled = !consentCheckbox.checked; }
+                : null;
+
+            if (toggleSubmitState && consentCheckbox) {
                 toggleSubmitState();
                 consentCheckbox.addEventListener('change', toggleSubmitState);
             }
+
+            if (!form) {
+                return;
+            }
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                if (!endpoint) {
+                    alert('送信先が設定されていません。時間をおいて再度お試しください。');
+                    return;
+                }
+
+                const formData = new FormData(form);
+
+                if (submitButton) {
+                    submitButton.disabled = true;
+                }
+
+                fetch(endpoint, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors'
+                }).then(function() {
+                    alert('送信が完了しました。ありがとうございました。');
+                    form.reset();
+                    if (toggleSubmitState) {
+                        toggleSubmitState();
+                    } else if (submitButton) {
+                        submitButton.disabled = false;
+                    }
+                }).catch(function(err) {
+                    console.error(err);
+                    alert('送信に失敗しました。時間をおいて再度お試しください。');
+                    if (submitButton) {
+                        submitButton.disabled = false;
+                    }
+                });
+            });
         })();
 
     </script>
