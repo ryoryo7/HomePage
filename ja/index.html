@@ -781,6 +781,28 @@
             border-radius: 12px;
         }
 
+        .consent-group label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 0;
+        }
+
+        .consent-group input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+
+        .consent-group a {
+            color: var(--primary-red);
+            text-decoration: underline;
+        }
+
+        .consent-group a:hover {
+            color: var(--primary-red-dark);
+        }
+
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -834,6 +856,11 @@
 
         .btn-submit:hover {
             background: var(--primary-red-dark);
+        }
+
+        .btn-submit:disabled {
+            background: var(--text-light);
+            cursor: not-allowed;
         }
 
         /* Footer */
@@ -1554,7 +1581,13 @@
                                 <option value="phone">電話</option>
                             </select>
                         </div>
-                        <button type="submit" class="btn btn-submit">送信する</button>
+                        <div class="form-group consent-group">
+                            <label for="privacy-consent">
+                                <input type="checkbox" id="privacy-consent" name="privacy-consent" required>
+                                <span>プライバシーポリシーに同意します（<a href="https://info.jboundex.com/ja/privacy.html" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a>）</span>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-submit" disabled>送信する</button>
                     </form>
                 </div>
             </div>
@@ -1636,10 +1669,21 @@
             const cfg = window.JBOUNDEX_CONFIG || {};
             const action = cfg.formAction;
             const form = document.querySelector('.contact-form form');
+            const submitButton = form ? form.querySelector('.btn-submit') : null;
+            const consentCheckbox = form ? form.querySelector('#privacy-consent') : null;
+
             if (form && action) {
                 form.setAttribute('action', action);
             } else if (!action) {
                 console.warn('formAction is not set in config.js');
+            }
+
+            if (form && submitButton && consentCheckbox) {
+                const toggleSubmitState = () => {
+                    submitButton.disabled = !consentCheckbox.checked;
+                };
+                toggleSubmitState();
+                consentCheckbox.addEventListener('change', toggleSubmitState);
             }
         })();
 
